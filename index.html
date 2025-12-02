@@ -1,0 +1,525 @@
+!DOCTYPE html>
+    <!-- André Martinez ubaldo : reserva, reseñas, preguntas frecuentes, ubicación, CSS de lo anterior mencionado -->
+    <!-- Nicolle Irrazabal Núñez : Catering y ayudo en el diseño de css de la pagina -->
+    <!-- Alejandra Camila Grados Sánchez : Portada,carta menú y ayudo en el css de la pagina -->
+    <!-- Rodrigo Aimar Rios : Locales y css de locales -->
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sabores Urbanos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header class="header">
+    <h1 class="logo">SABORES URBANOS</h1>
+
+    <nav class="menu">
+        <a href="#portada">INICIO</a>
+        <span>|</span>
+        <a href="#platos">CARTA</a>
+        <span>|</span>
+        <a href="#catering">CATERING</a>
+        <span>|</span>
+        <a href="#locales">LOCALES</a>
+        <span>|</span>
+        <a href="#reserva">RESERVA</a>
+    </nav>
+</header>
+
+<section id="portada" class="portada">
+    <div class="intro">
+        <p>
+            Descubra un mundo de exquisitas experiencias culinarias en nuestro restaurante, donde cada plato 
+            es el resultado de una cuidada selección de ingredientes y una meticulosa preparación.
+            <span class="texto-extra">
+                Nuestro chef combina tradición y creatividad para ofrecer sabores únicos, 
+                usando productos frescos y locales, pensados para cada ocasión. 
+                Ya sea que nos visites para un almuerzo ligero o una cena especial, 
+                cada experiencia es inolvidable.
+            </span>
+        </p>
+        <a href="#" class="boton-leer">LEER MÁS</a>
+    </div>
+</section>
+
+
+<script>
+const botonLeer = document.querySelector(".boton-leer");
+const textoExtra = document.querySelector(".texto-extra");
+
+botonLeer.addEventListener("click", (e) => {
+    e.preventDefault();
+    textoExtra.classList.toggle("show");
+
+    
+    if(textoExtra.classList.contains("show")) {
+        botonLeer.textContent = "LEER MENOS";
+    } else {
+        botonLeer.textContent = "LEER MÁS";
+    }
+});
+</script>
+
+
+<nav class="barra-carta">
+    <a class="barra-link" data-target="destacados">PLATOS DESTACADOS</a><span>|</span>
+    <a class="barra-link" data-target="entradas">ENTRADAS</a><span>|</span>
+    <a class="barra-link" data-target="sopas">SOPAS</a><span>|</span>
+    <a class="barra-link" data-target="ensaladas">ENSALADAS</a><span>|</span>
+    <a class="barra-link" data-target="postres">POSTRES</a><span>|</span>
+</nav>
+
+
+<section id="platos" class="platos-section">
+
+    
+    <section id="destacados" class="categoria active">
+        <div class="seccion-header">
+            <a href="#" class="btn-ver">VER TODO</a>
+        </div>
+
+        <div class="platos-grid">
+            <div class="plato"><img src="img/plato1 (1).jpg"><h3>Hamburguesa Casera</h3><p>Jugosa carne 100% vacuna cocinada a la perfección, con pan artesanal recién horneado, lechuga fresca, tomate y nuestra salsa especial que le da un toque único.</p>
+               <span class="precio">S/.25.00</span> 
+        </div>
+
+            <div class="plato"><img src="img/plato2 (1).jpg"><h3>Pasta al Pesto</h3><p>Pasta al dente bañada en una cremosa salsa de pesto casero con albahaca fresca, ajo y queso parmesano rallado, acompañada de un ligero toque de aceite de oliva extra virgen.</p>
+                <span class="precio">S/.35.00</span>
+            </div>
+
+            <div class="plato"><img src="img/plato3 (1).jpg"><h3>Sándwich Artesanal</h3><p>an ciabatta crocante relleno de pollo a la plancha, vegetales frescos y un toque de mayonesa casera, ideal para un almuerzo ligero pero lleno de sabor.</p>
+            <span class="precio">S/.20.00</span>
+            </div>
+        </div>
+
+        <div class="platos-extra">
+            <div class="plato"><img src="img/plato4 (1).jpg"><h3>Wrap Crocante</h3><p>Tortilla suave rellena de pollo crujiente, vegetales frescos y salsa BBQ casera. Perfecto para quienes buscan un bocado rápido y lleno de sabor, con una textura que combina crocante y suave.</p>
+            <span class="precio">S/.25.00</span>
+        </div>
+            <div class="plato"><img src="img/plato5 (1).jpg"><h3>Pizza Personal</h3><p>Masa delgada y crujiente horneada a la perfección, cubierta con salsa de tomate natural, queso derretido y tus ingredientes favoritos. Ideal para disfrutar al momento y personalizar según tu gusto.</p>
+            <span class="precio">S/.30.00</span>
+        </div>
+            <div class="plato"><img src="img/plato6 (1).jpg"><h3>Burrito Mixto</h3><p>Tortilla grande rellena de carne jugosa, frijoles, arroz y pico de gallo fresco, acompañada de un toque de crema y queso. Un plato completo, lleno de sabor y tradición.</p>
+            <span class="precio">S/.28.00</span>
+        </div>
+        </div>
+    </section>
+
+    
+    <section id="entradas" class="categoria">
+        <div class="platos-grid">
+            <div class="plato"><img src="img/entrada1.jpg"><h4>Bruschettas Clásicas</h4><p>Pan tostado al horno con una mezcla de tomate fresco, albahaca y un chorrito de aceite de oliva, coronado con un toque de ajo y sal marina.</p>
+            <span class="precio">S/.15.00</span>
+            </div>
+            <div class="plato"><img src="img/entrada2.jpg"><h4>Tequeños</h4><p>Deliciosos palitos de queso envueltos en masa suave y dorada, fritos hasta alcanzar una textura crujiente irresistible, perfectos para compartir.</p>
+            <span class="precio">S/.10.00</span>
+            </div>
+            <div class="plato"><img src="img/entrada3.jpg"><h4>Causa Limeña</h4><p>Tradicional papa amarilla sazonada con ají amarillo, rellena de una mezcla de pollo desmenuzado, mayonesa y vegetales frescos, acompañada de aceitunas y huevo duro.</p>
+            <span class="precio">S/.20.00</span>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="sopas" class="categoria">
+        <div class="platos-grid">
+            <div class="plato"><img src="img/sopa1.jpg"><h4>Crema de Tomate</h4><p>Suave y cremosa, hecha con tomates maduros y frescos, cocidos lentamente para realzar su sabor, acompañada de un toque de albahaca fresca y crutones dorados.</p>
+            <span class="precio">S/.25.00</span>
+        </div>
+            <div class="plato"><img src="img/sopa2.jpg"><h4>Sopa de Verduras</h4><p>Ligera y natural, llena de verduras frescas de temporada, hervidas a fuego lento para conservar todo su sabor y nutrientes.</p>
+            <span class="precio">S/.28.00</span>
+        </div>
+            <div class="plato"><img src="img/sopa3.jpg"><h4>Ramen</h4><p>Caldo profundo y aromático al estilo japonés, con fideos frescos, vegetales crocantes, huevo pochado y un toque de miso para un sabor intenso y reconfortante.</p>
+            <span class="precio">S/.35.00</span>
+        </div>
+        </div>
+    </section>
+
+    
+    <section id="ensaladas" class="categoria">
+        <div class="platos-grid">
+            <div class="plato"><img src="img/ensalada1.jpg"><h4>César</h4><p>Lechuga fresca crujiente, tiras de pollo a la plancha, crutones dorados y queso parmesano rallado, bañada en un aderezo César cremoso hecho en casa.</p>
+            <span class="precio">S/.25.00</span>
+            </div>
+            <div class="plato"><img src="img/ensalada2.jpg"><h4>Mediterránea</h4><p>Mezcla de tomate, pepino, aceitunas negras y queso feta, aliñada con aceite de oliva extra virgen y un toque de orégano seco, fresca y saludable.</p>
+            <span class="precio">S/.25.00</span>
+            </div>
+            <div class="plato"><img src="img/ensalada3.jpg"><h4>Tropical</h4><p>Lechuga fresca acompañada de frutas tropicales de temporada, nueces tostadas y un aderezo cítrico dulce que equilibra perfectamente los sabores.</p>
+            <span class="precio">S/.25.00</span>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="postres" class="categoria">
+        <div class="platos-grid">
+            <div class="plato"><img src="img/postre1.jpg"><h4>Cheesecake</h4><p>Suave y cremoso cheesecake horneado, con base de galleta crocante y un topping de fresas frescas que aporta acidez y dulzura al mismo tiempo.</p>
+            <span class="precio">S/.25.00</span>
+            </div>
+            <div class="plato"><img src="img/postre2.jpg"><h4>Brownie</h4><p>Brownie de chocolate intenso y húmedo, acompañado de una bola de helado de vainilla y un ligero toque de sirope de chocolate, irresistible para los amantes del chocolate.</p>
+            <span class="precio">S/.25.00</span>
+            </div>
+            <div class="plato"><img src="img/postre3.jpg"><h4>Mousse</h4><p>Ligera mousse de maracuyá con un balance perfecto entre dulzura y acidez, con textura cremosa y un aroma tropical que refresca el paladar.</p>
+            <span class="precio">S/.25.00</span>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+
+<script>
+
+const links = document.querySelectorAll(".barra-link");
+const categorias = document.querySelectorAll(".categoria");
+const extras = document.querySelector(".platos-extra");
+const botonVer = document.querySelector(".btn-ver");
+
+links.forEach(link => {
+    link.addEventListener("click", () => {
+        let target = link.dataset.target;
+
+        categorias.forEach(cat => cat.classList.remove("active"));
+        document.getElementById(target).classList.add("active");
+
+        if (target === "destacados") {
+            extras.classList.remove("show");
+        }
+
+        window.scrollTo({ top: document.getElementById("platos").offsetTop - 80, behavior: "smooth" });
+    });
+});
+
+
+botonVer.addEventListener("click", (e) => {
+    e.preventDefault();
+    extras.classList.toggle("show");
+});
+</script>
+
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Catering que te alimenta y te impulsa</h1>
+            <p>Comida rápida casera para estudiantes, oficinas y eventos.</p>
+        </div>
+    </section>
+    <section id="catering" class="servicios">
+        <h2>SERVICIOS DE CATERING</h2>
+
+        <div class="grid">
+            <div class="card">
+                <img src="img/Hamburgueza.jpg" alt="">
+                <h3>Comida Rapida Casera</h3>
+                <p>Hamburguesas, wraps y platos llenadores para grupos juveniles.</p>
+                <button onclick="mostrarDetalle('comida-rapida')">Ver más</button>
+            </div>
+
+            <div class="card">
+                <img src="img/comida_estudiantes.avif" alt="">
+                <h3>Almuerzos Estudiantiles</h3>
+                <p>Opciones económicas, nutritivas y rápidas para instituciones.</p>
+                <button onclick="mostrarDetalle('almuerzo')">Ver más</button>
+            </div>
+
+            <div class="card">
+                <img src="img/catering.jpg" alt="">
+                <h3>Catering para Eventos</h3>
+                <p>Ideal para oficinas, capacitaciones y reuniones de trabajo.</p>
+                <button onclick="mostrarDetalle('eventos')">Ver más</button>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="detalle-comida-rapida" class="detalle oculto">
+        <div class="detalle-content">
+            <h2>Comida Rápida</h2>
+            <p>Incluye: Mini hamburguesas, mini hot dogs, mini pizzas, nuggets, papas fritas, wraps, bebidas, postres y menaje desechable.</p>
+            <img src="img/catering_comidarapida.jpg" alt="">
+            <button class="cerrar" onclick="cerrarDetalle('detalle-comida-rapida')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="detalle-almuerzo" class="detalle oculto">
+        <div class="detalle-content">
+            <h2>Almuerzos Estudiantiles</h2>
+            <p>Incluye: Bowls nutritivos, pastas económicas, salteados, ensaladas, wraps, burritos, bebidas y postres.</p>
+            <img src="img/catering_saludable.avif" alt="">
+            <button class="cerrar" onclick="cerrarDetalle('detalle-almuerzo')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="detalle-eventos" class="detalle oculto">
+        <div class="detalle-content">
+            <h2>Catering para Eventos</h2>
+            <p>Ideal para oficinas, reuniones, capacitaciones y celebraciones corporativas.</p>
+            <img src="img/catering_eventos.jpg" alt="">
+            <button class="cerrar" onclick="cerrarDetalle('detalle-eventos')">Cerrar</button>
+        </div>
+    </div>
+</body>
+
+<main>
+    <section id="portada"></section>
+    <section id="platos"></section>
+    <section id="catering"></section>
+
+    <section id="locales" class="locales-section">
+        <h2 class="titulo-locales">LOCALES</h2>
+
+        <div class="locales-grid">
+            <!-- MIRAFLORES -->
+            <article class="local-card">
+                <div class="local-image-box">
+                    <img src="img/loca1.jpeg" alt="Local Miraflores" class="local-img">
+                    <div class="local-buttons">
+                        <a 
+                            class="btn-local" 
+                            href="https://www.google.com/maps?q=Av.+Angamos+Este+478,+Miraflores,+Lima,+Peru" 
+                            target="_blank">
+                            ENCUÉNTRANOS
+                        </a>
+                        <a 
+                            class="btn-local" 
+                            href="#reserva" 
+                            target="_self">
+                            RESERVA
+                        </a>
+                    </div>
+                </div>
+                <h3 class="local-nombre">MIRAFLORES</h3>
+                <p class="local-direccion">Av. Angamos Este 478, Miraflores</p>
+            </article>
+
+            
+            <article class="local-card">
+                <div class="local-image-box">
+                    <img src="img/local2.jpeg" alt="Local SAN ISIDRO" class="local-img">
+                    <div class="local-buttons">
+                        <a 
+                            class="btn-local" 
+                            href="#reserva" 
+                            target="_self">
+                            ENCUÉNTRANOS
+                        </a>
+                        <a 
+                            class="btn-local" 
+                            href="#reserva" 
+                            target="_self">
+                            RESERVA
+                        </a>
+                    </div>
+                </div>
+                <h3 class="local-nombre">SAN ISIDRO</h3>
+                <p class="local-direccion">Av. Los Conquistadores 1048, San Isidro </p>
+            </article>
+
+            <!-- LA MOLINA -->
+            <article class="local-card">
+                <div class="local-image-box">
+                    <img src="img/local3.jpeg" alt="Local La Molina" class="local-img">
+                    <div class="local-buttons">
+                        <a 
+                            class="btn-local" 
+                            href="https://www.google.com/maps?q=Av.+La+Molina+1131,+La+Molina,+Lima,+Peru" 
+                            target="_blank">
+                            ENCUÉNTRANOS
+                        </a>
+                        <a 
+                            class="btn-local" 
+                            href="https://rodizio.com.pe" 
+                            target="_blank">
+                            PIDE ONLINE
+                        </a>
+                    </div>
+                </div>
+                <h3 class="local-nombre">LA MOLINA</h3>
+                <p class="local-direccion">Av. La Molina 1131, La Molina</p>
+            </article>
+        </div>
+    </section>
+
+    
+</main>
+
+</body>
+<!-- RESERVA -->
+    <section id="reserva" class="reserva">
+        <div class="contenido-reserva">
+            <h2>RESERVA TU MESA</h2>
+            <p>Asegura tu lugar para disfrutar de una experiencia inolvidable. ¡Te esperamos!</p>
+
+            <form class="formulario-reserva" id="formReserva">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <input type="tel" placeholder="Teléfono (opcional)">
+                
+                <select required>
+                    <option value="">Selecciona el local</option>
+                    <option>Sede Centro</option>
+                    <option>Sede Norte</option>
+                    <option>Sede Sur</option>
+                </select>
+
+                <input type="date" required>
+
+                <select required>
+                    <option value="">Selecciona la hora</option>
+                    <option>12:00 pm</option>
+                    <option>1:00 pm</option>
+                    <option>2:00 pm</option>
+                    <option>6:00 pm</option>
+                    <option>7:00 pm</option>
+                    <option>8:00 pm</option>
+                </select>
+
+                <input type="number" min="1" max="15" placeholder="Personas (1-15)" required>
+
+                <select required>
+                    <option value="">Tipo de servicio</option>
+                    <option>Mesa interior</option>
+                    <option>Mesa en terraza</option>
+                    <option>Cita romántica</option>
+                    <option>Cumpleaños</option>
+                    <option>Evento especial</option>
+                </select>
+
+                <select>
+                    <option value="">Preferencia de mesa</option>
+                    <option>Cerca a ventana</option>
+                    <option>Cerca a barra</option>
+                    <option>Mesa privada</option>
+                    <option>Primer piso</option>
+                    <option>Segundo piso</option>
+                </select>
+
+                <select>
+                    <option value="">¿Vienen niños?</option>
+                    <option>No</option>
+                    <option>1 niño</option>
+                    <option>2 niños</option>
+                    <option>3 o más</option>
+                </select>
+
+                <textarea rows="4" placeholder="Comentarios especiales (opcional)"></textarea>
+
+                <button type="submit" class="boton-reserva">CONFIRMAR RESERVA</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonios">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="contenedor-testimonios">
+            <div class="testimonio">
+                <p>  “Una experiencia increíble desde que entré hasta que me fui. La comida tiene un sabor único,
+        se nota la calidad de los ingredientes y la dedicación en cada plato. El ambiente es acogedor
+        y el servicio fue impecable. Definitivamente se ha convertido en uno de mis lugares favoritos.”
+                </p>
+                <span>- Cristiano R.</span>
+            </div>
+            <div class="testimonio">
+                <p>“Celebré una reunión familiar aquí y todos quedamos encantados. La atención del personal fue
+        excelente, siempre atentos a cada detalle. Los platos llegaron en el punto perfecto y el lugar
+        tiene una vibra especial que te hace sentir muy cómodo. Totalmente recomendado para cualquier
+        ocasión.”
+                </p>
+                <span>- Lionel M.</span>
+            </div>
+            <div class="testimonio">
+                <p>“Fui con mi pareja a celebrar nuestro aniversario y fue una noche perfecta. Desde la decoración,
+        la música y el ambiente, hasta la calidad de cada plato. Todo estuvo espectacular. Sin duda
+        un lugar ideal para vivir una velada especial.”
+                </p>
+                <span>- Kanye W.</span>
+            </div>
+        </div>
+    </section>
+
+    <!--preguntas frecuentes-->
+    <section class="faq">
+        <h2>Preguntas Frecuentes</h2>
+
+        <div class="faq-item">
+            <h3>¿Puedo modificar mi reserva?</h3>
+            <p>Sí. Puedes modificar la fecha, la hora, el número de personas o incluso el tipo de mesa que deseas.
+        Para hacerlo solo debes comunicarte con nosotros a través de nuestros números de atención o redes sociales.
+        Te recomendamos realizar cambios con al menos 2 horas de anticipación para asegurar disponibilidad.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Aceptan eventos privados?</h3>
+            <p>Sí, contamos con ambientes especiales para eventos privados como cumpleaños, cenas corporativas,
+        compromisos, despedidas, reuniones familiares y más. También ofrecemos opciones de decoración,
+        música personalizada y servicio de catering interno. Escríbenos para ayudarte a organizar tu evento.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Tienen opciones vegetarianas?</h3>
+            <p>Sí, en nuestro menú incluimos una variedad de platos vegetarianos y veganos. 
+        Trabajamos con ingredientes frescos y ofrecemos alternativas saludables sin perder el sabor.
+        Además, podemos adaptar algunos platos bajo solicitud previa para ajustarlos a tus preferencias alimentarias.
+    </p></p>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="mapa">
+        <h2>Nuestras ubicaciones</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.806684827654!2d-77.0274005251162!3d-12.125375543369056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c81c605ea5e1%3A0x17328a8b49d37914!2sISIL%20-%20Miraflores!5e0!3m2!1ses!2spe!4v1764644551884!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>SABORES URBANOS © 2025</p>
+        <p>Horario: Lun - Dom 12:00 pm - 10:00 pm</p>
+        <p>Síguenos:
+            <a href="#">Facebook</a> · 
+            <a href="#">Instagram</a> · 
+            <a href="#">WhatsApp</a>
+        </p>
+    </footer>
+
+    <!-- SCRIPT DEL MODAL -->
+    <script>
+        const form = document.getElementById("formReserva");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const inputs = form.querySelectorAll("input, select, textarea");
+            let resumen = "";
+
+            inputs.forEach(campo => {
+                if (campo.value.trim() !== "") {
+                    resumen += `• ${campo.placeholder || campo.previousElementSibling?.innerText || 'Dato'}: ${campo.value}\n`;
+                }
+            });
+
+            const modal = document.createElement("div");
+            modal.className = "modal-reserva";
+
+            modal.innerHTML = `
+                <div class="modal-contenido">
+                    <h3>¡Reserva completada!</h3>
+                    <pre>${resumen}</pre>
+                    <p>Te esperamos.</p>
+                    <button id="cerrarModal">Cerrar</button>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+
+            document.getElementById("cerrarModal").onclick = () => modal.remove();
+        });
+    </script>
+
+</body>
+</html>
+   
